@@ -38,12 +38,12 @@ jobs:
           echo test, and deploy your project.
           
           
-  print1:
-    needs: build
-    runs-on: ubuntu-latest
+#   print1:
+#     needs: build
+#     runs-on: ubuntu-latest
     
-    steps:
-      - name: Print one line
-        run: echo print line 
+#     steps:
+#       - name: Print one line
+#         run: echo print line 
 
 
