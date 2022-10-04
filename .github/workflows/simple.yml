@@ -23,6 +23,8 @@ jobs:
 
   run-windows-commands:
     runs-on: windows-latest
+#     to not run in parraller
+    needs: [run-shell-command]
     steps: 
       - name: Directory PowerShell
         run: Get-Location
