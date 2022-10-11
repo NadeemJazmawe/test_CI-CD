@@ -23,8 +23,8 @@ jobs:
       - name: Log node version 
         run: node -v
       - uses: actions/setup-node@v1
-#         with:
-#           node-version: ${{ matrix.node_version }}
+        with:
+          node-version: ${{ matrix.node_version }}
       - name: Log node version 
         run:  | 
           node -v
