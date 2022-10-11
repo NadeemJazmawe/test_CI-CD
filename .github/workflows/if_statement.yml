@@ -26,7 +26,7 @@ jobs:
           echo $NODE_VERSION
 
       - name: If Statement
-        if: IS_UBUNTU_8
+        if: ${{ IS_UBUNTU_8 }}
         run:  | 
           node -v
           echo $IS_UBUNTU_8
