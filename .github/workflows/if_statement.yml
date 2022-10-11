@@ -1,0 +1,32 @@
+name: Matrix 
+
+on:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs: 
+  node-version:
+    strategy: 
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest] 
+        node_version: [6, 8, 10]
+         
+    runs-on: ${{ matrix.os }}
+    
+    env: 
+      IS_UBUNTU_8: ${{ matrix.is_ubuntu_8 }}
+      OS: ${{ matrix.os }}
+      NODE_VERSION: ${{ matrix.node_version }}
+      
+    steps:      
+      - name: Print OS && Node Version (First Way)
+        run: |
+          echo $OS 
+          echo $NODE_VERSION
+
+      - name: If Statement
+        if: IS_UBUNTU_8
+        run:  | 
+          node -v
+          echo $IS_UBUNTU_8
