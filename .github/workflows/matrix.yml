@@ -24,21 +24,14 @@ jobs:
     env: 
       IS_UBUNTU_8: ${{ matrix.is_ubuntu_8 }}
       OS: ${{ matrix.os }}
-    steps: 
-      - name: Print Hello World!!
-        run: echo Hello World!!
-        
-      - name: Print OS && Node Version1
+      
+    steps:      
+      - name: Print OS && Node Version (First Way)
         run: |
           echo $OS 
           echo jazmawe
           
-      - name: Print OS && Node Version2
-        run: |
-          echo $matrix.os 
-          echo jazmawe
-
-      - name: Print OS && Node Version3
+      - name: Print OS && Node Version (Second Way)
         run: |
           echo ${{ matrix.os }}
           echo jazmawe
