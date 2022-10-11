@@ -24,15 +24,15 @@ jobs:
     env: 
       IS_UBUNTU_8: ${{ matrix.is_ubuntu_8 }}
     steps: 
-        - name: Print Hello World!!
-          run: echo Hello World!!
+      - name: Print Hello World!!
+        run: echo Hello World!!
           
-#       - name: Log node version 
-#         run: node -v
-#       - uses: actions/setup-node@v1
-#         with:
-#           node-version: ${{ matrix.node_version }}
-#       - name: Log node version 
-#         run:  | 
-#           node -v
-#           echo $IS_UBUNTU_8
+      - name: Log node version 
+        run: node -v
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+      - name: Log node version 
+        run:  | 
+          node -v
+          echo $IS_UBUNTU_8
