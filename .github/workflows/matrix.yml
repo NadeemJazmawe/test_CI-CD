@@ -20,21 +20,24 @@ jobs:
             node_version: 6
           - os: macos-latest
             node_version: 8
+            
     runs-on: ${{ matrix.os }}
+    
     env: 
       IS_UBUNTU_8: ${{ matrix.is_ubuntu_8 }}
       OS: ${{ matrix.os }}
+      NODE_VERSION: ${{ matrix.node_version }}
       
     steps:      
       - name: Print OS && Node Version (First Way)
         run: |
           echo $OS 
-          echo jazmawe
+          echo $NODE_VERSION
           
       - name: Print OS && Node Version (Second Way)
         run: |
           echo ${{ matrix.os }}
-          echo jazmawe
+          echo ${{ matrix.node_version }}
 
       - name: Log node version 
         run: node -v
