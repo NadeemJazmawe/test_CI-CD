@@ -23,16 +23,7 @@ jobs:
       - name: Print OS && Node Version (First Way)
         run: |
           echo $OS 
-          echo $NODE_VERSION
-
-          
-
-      - name: If Statement 2
-        if: ${{ NODE_VERSION }} == 10
-        run:  | 
-          node -v
-          echo $IS_UBUNTU_8
-          
+          echo $NODE_VERSION     
 
       - name: If Statement 3
         if: NODE_VERSION == 10
