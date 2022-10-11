@@ -26,6 +26,11 @@ jobs:
     steps: 
       - name: Print Hello World!!
         run: echo Hello World!!
+        
+      - name: Print OS && Node Version
+        run: |
+          echo nadeem
+          echo jazmawe
           
       - name: Log node version 
         run: node -v
