@@ -23,15 +23,26 @@ jobs:
     runs-on: ${{ matrix.os }}
     env: 
       IS_UBUNTU_8: ${{ matrix.is_ubuntu_8 }}
+      OS: ${{ matrix.os }}
     steps: 
       - name: Print Hello World!!
         run: echo Hello World!!
         
-      - name: Print OS && Node Version
+      - name: Print OS && Node Version1
         run: |
-          echo nadeem
+          echo $OS 
           echo jazmawe
           
+      - name: Print OS && Node Version2
+        run: |
+          echo $matrix.os 
+          echo jazmawe
+
+      - name: Print OS && Node Version3
+        run: |
+          echo ${{ matrix.os }}
+          echo jazmawe
+
       - name: Log node version 
         run: node -v
       - uses: actions/setup-node@v1
