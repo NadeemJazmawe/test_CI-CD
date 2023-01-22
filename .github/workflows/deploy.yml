@@ -1,0 +1,48 @@
+name: Deploy
+
+on:
+    workflow_dispatch: 
+    
+    workflow_call:
+
+jobs:
+  Release-Project:
+      name: Code_QualityRelease static site to Github Releases
+      runs-on: ubuntu-latest
+      steps:
+          - uses: actions/checkout@v3
+          
+          - name: Archive site content
+            uses: sibiraj-s/action-archiver@v1
+            with:
+              path: './'
+              format: zip
+              gzip: true
+              output: GingerRuntime.zip
+              
+          - name: Create Github Release
+            id: create-new-release
+            uses: actions/create-release@v1
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+            with:
+              tag_name: v${{ github.run_number }}  #${{ github.ref }}
+              release_name: Release v${{ github.run_number }}
+
+
+          - name: Upload Assest to Github Releases
+            uses: actions/upload-release-asset@v1
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            with:
+              upload_url: ${{ steps.create-new-release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+              asset_path: ./GingerRuntime.zip
+              asset_name: site-v3.zip
+              asset_content_type: application/zip
+              
+              
+              
+              
+              
+              
+              
