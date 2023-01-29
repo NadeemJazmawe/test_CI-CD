@@ -1,6 +1,4 @@
-27 lines (21 sloc)  809 Bytes
-
-name: Second Workflow
+name: third Workflow
 
 on:
   workflow_call:
