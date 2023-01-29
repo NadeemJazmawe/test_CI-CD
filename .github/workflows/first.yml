@@ -1,4 +1,4 @@
-name: CD
+name: first
 
 on:
     workflow_dispatch: 
@@ -6,4 +6,4 @@ on:
 jobs:
     CI:
         name: CI
-        uses: nadeemjazmawe/Ginger/.github/workflows/main.yml@master
+        uses: nadeemjazmawe/Ginger/.github/workflows/second.yml@master
