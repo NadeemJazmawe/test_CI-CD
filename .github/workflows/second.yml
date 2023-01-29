@@ -22,7 +22,12 @@ jobs:
       
       - name: print agent version
         run: |
-            echo $($agentversion)
+            echo "$($agentversion)"
+            echo "agentversion"
+            echo "$agentversion"
+            echo "%gentversion%
+            echo "$(agentversion)"
+            
           
 # ------------------------------------------------------------------------------------------------------
 # Upload Artifacts 
