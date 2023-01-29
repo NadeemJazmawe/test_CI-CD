@@ -4,6 +4,12 @@ on:
     workflow_dispatch: 
 
 jobs:
-    CI:
-        name: CI
-        uses: nadeemjazmawe/Ginger/.github/workflows/second.yml@master
+    Second:
+        name: Second
+        uses: nadeemjazmawe/test_CI-CD/.github/workflows/second.yml@master
+        
+        
+    Third:
+        name: Third
+        needs: Second
+        uses: nadeemjazmawe/test_CI-CD/.github/workflows/third.yml@master
