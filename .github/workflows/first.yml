@@ -6,10 +6,10 @@ on:
 jobs:
     Second:
         name: Second
-        uses: nadeemjazmawe/test_CI-CD/.github/workflows/second.yml@master
+        uses: nadeemjazmawe/test_CI-CD/.github/workflows/second.yml@main
         
         
     Third:
         name: Third
         needs: Second
-        uses: ./.github/workflows/third.yml
+        uses: nadeemjazmawe/test_CI-CD/.github/workflows/third.yml@main
