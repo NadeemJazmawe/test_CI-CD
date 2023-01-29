@@ -2,16 +2,14 @@ name: Second Workflow
 
 on:
   workflow_call:
+  workflow_dispatch:
+    
 
 jobs:
   build:
     runs-on: windows-latest
-    
-    env:
-      BUILD_CONFIGURATION: Release
       
-    steps:
-      
+    steps:    
 # ------------------------------------------------------------------------------------------------------
 # Copy repo Code
 # ------------------------------------------------------------------------------------------------------
