@@ -12,8 +12,9 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v1
 
-      - name: Delete current release assets
-        uses: andreaswilli/delete-release-assets-action@v2.0.0
+      - uses: ClementTsang/delete-tag-and-release@v0.3.1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          tag: v4
+          delete_release: true # default: false
+          tag_name: v5 # tag name to delete
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
