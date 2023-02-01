@@ -1,0 +1,14 @@
+
+name: gitclone
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+      - name: clone out Git repository
+        run: git clone https://github.com/nadeemjazmawe/test_CI-CD.git
